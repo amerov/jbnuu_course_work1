@@ -24,7 +24,7 @@
                 Конфигурация
               </a>
               <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="#">Жанры</a></li>
+                <li><%= link_to 'Жанры', admin_genres_path, class: 'dropdown-item' %></li>
                 <li><a class="dropdown-item" href="#">Рассписание</a></li>
               </ul>
             </li>
@@ -42,7 +42,7 @@
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark">
                   <li class="nav-item">
-                    <%= link_to 'Выйти', destroy_user_session_path, class: 'nav-link', method: 'delete'  %>
+                    <%= link_to 'Выйти', destroy_user_session_path, class: 'nav-link', data: { "turbo-method": :delete } %>
                   </li>
                 </ul>
               </li>
