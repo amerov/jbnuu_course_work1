@@ -1,11 +1,20 @@
+<div class="row">
+  <div class="col">
+  </div>
+  <div class="col-auto">
+    <%= link_to 'Добавить', new_admin_genre_path, class: 'btn btn-primary ' %>
+  </div>
+</div>
+<hr>
+
 <table class="table">
-  <th>
+  <thead>
     <tr>
       <td>Название</td>
       <td>Кол-во фильмов</td>
       <td>Действия</td>
     </tr>
-  </th>
+  </thead>
 
   <tbody>
     <% @genres.each do |genre| %>
@@ -13,11 +22,17 @@
         <td><%= genre.name %></td>
         <td><%= genre.movies.count %></td>
         <td>
-          <button type="">Редактировать </button>
-          <button type="">Удалить</button>
+          <div class="row">
+            <div class="col-3">
+              <%= link_to 'Редактировать', edit_admin_genre_path(genre), class: 'btn btn-primary' %>
+            </div>
+            <div class="col-3">
+              <%= button_to 'Удалить', admin_genre_path(genre), method: :delete, class: 'btn btn-danger' %>
+            </div>
+          </div>
         </td>
       </tr>
     <% end %>
   </tbody>
-  
+
 </table>
